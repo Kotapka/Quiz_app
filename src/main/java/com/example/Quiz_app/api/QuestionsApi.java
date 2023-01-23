@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class LoginApi {
+public class QuestionsApi {
     @GetMapping("/Questions")
     public QuizQuestions greet() {
         QuizQuestions response = new QuizQuestions(List.of(quiz1,quiz2));
