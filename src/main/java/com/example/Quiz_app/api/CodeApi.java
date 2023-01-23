@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class RegisterApi {
-    @PostMapping("/apiRegister")
-    public ResponseEntity<LoginRequest> greet(@RequestBody LoginRequest loginRequest) {
+public class CodeApi {
+    @PostMapping("/apiCode")
+    public ResponseEntity<Code> greet(@RequestBody Code code) {
 
-        return ResponseEntity.ok(loginRequest); //return ResponseEntity.badRequest(loginRequest);
+        return ResponseEntity.ok(code); //return ResponseEntity.badRequest(loginRequest);
     }
 }
