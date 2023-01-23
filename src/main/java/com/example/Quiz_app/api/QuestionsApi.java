@@ -1,13 +1,13 @@
 package com.example.Quiz_app.api;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class QuestionsApi {
-    @GetMapping("/Questions")
+    @GetMapping("/Quizzes")
     public QuizQuestions greet() {
         QuizQuestions response = new QuizQuestions(List.of(quiz1,quiz2));
         return response;
@@ -20,13 +20,4 @@ public class QuestionsApi {
     record Quiz(int id,String title,List<QnA> qanList){}
     record QnA(String question,String r_a,String w_a1,String w_a2,String w_a3){}
 
-   /* record Questions(String question,List<String> answers){}
-    record Quiz(int id,String title,Questions question){}
-
-    Questions questions = new Questions("Pytanie1",List.of("A1","A2","A3","A4"));
-    Questions questions2 = new Questions("Pytanie2",List.of("B1","B2","B3","B4"));
-
-    Quiz quiz1 = new Quiz(1,"Quiz1",questions);
-    Quiz quiz2 = new Quiz(2,"Quiz2",questions2);
-    record QuizQuestions(List<Quiz> Quiz){}*/
 }
