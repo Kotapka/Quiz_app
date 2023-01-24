@@ -1,4 +1,4 @@
-package com.example.Quiz_app.dataBase;
+package com.example.Quiz_app.users;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -12,6 +12,7 @@ import java.util.Objects;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table
 public class Users{
     @Id
     @SequenceGenerator(
@@ -31,7 +32,7 @@ public class Users{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Users users = (Users) o;
+        com.example.Quiz_app.users.Users users = (com.example.Quiz_app.users.Users) o;
         return Objects.equals(id, users.id) && Objects.equals(login, users.login) && Objects.equals(email, users.email) && Objects.equals(password, users.password);
     }
 

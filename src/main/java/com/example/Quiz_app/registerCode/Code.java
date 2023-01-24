@@ -1,4 +1,4 @@
-package com.example.Quiz_app.api;
+package com.example.Quiz_app.registerCode;
 
 public class Code {
     int Code;

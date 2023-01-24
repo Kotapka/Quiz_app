@@ -1,4 +1,4 @@
-package com.example.Quiz_app.api;
+package com.example.Quiz_app.registerCode;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
