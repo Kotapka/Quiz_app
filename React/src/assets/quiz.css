@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(245, 127, 59);
+  background: rgb(255, 188, 62);
+  font-family: "League Spartan", sans-serif;
+}
+
+.question {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+  margin-top: 5em;
+  padding: 1em;
+  background-color: white;
+}
+
+.questionText {
+  font-size: 2em;
+  padding: 0.25em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.answers {
+  display: flex; /* Use flexbox to position the buttons */
+  flex-wrap: wrap; /* Allow the buttons to wrap onto a new line */
+}
+
+.answer {
+  padding: 0.5em;
+  background-color: rgb(240, 234, 178);
+  font-size: 1.25em;
+  border: 1px solid rgb(255, 209, 57);
+  margin: 1em;
+  border-radius: 2em;
+  cursor: pointer;
+  width: 100%; /* Each button takes up half of the container's width */
+  text-align: center; /* Center the button's text */
+}
+
+.answer:hover {
+  background-color: rgb(59, 51, 55);
+  border: 1px solid rgb(255, 209, 57);
+}
+.answer:active {
+  background-color: rgb(59, 51, 55);
+  border: 1px solid rgb(255, 209, 57);
+}
