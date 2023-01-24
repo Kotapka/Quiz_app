@@ -9,24 +9,37 @@ import "react-toastify/dist/ReactToastify.css";
 function Register() {
   function postRegister(event) {
     event.preventDefault();
-    axios
-      .post("http://localhost:8080/apiRegister", { login, email, password })
-      .then((response) => {
-        console.log(response);
-        nav("/code");
-      })
-      .catch((error) =>
-        toast.error("Error", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
+    if (login !== "" && email !== "" && password !== "") {
+      axios
+        .post("http://localhost:8080/apiRegister", { login, email, password })
+        .then((response) => {
+          console.log(response);
+          nav("/code");
         })
-      );
+        .catch((error) =>
+          toast.error("Błędne dane! ", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          })
+        );
+    } else {
+      toast.error("Uzupełnij wszystkie pola! ", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   }
 
   const nav = useNavigate();
@@ -68,7 +81,7 @@ function Register() {
         Wyślij kod
       </button>
       <ToastContainer
-        position="top-right"
+        position="bottom-right"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

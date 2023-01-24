@@ -25,7 +25,7 @@ const Myfilmcard = (props) => {
           }}
         ></Box>
         <h5 className="card-title">{props.title}</h5>
-        <Link to="/quiz">
+        <Link to={`quiz/${props.index}`}>
           <p className="card-text">Edytuj</p>
         </Link>
       </div>

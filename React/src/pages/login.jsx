@@ -2,19 +2,44 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Signin() {
   function postLogin(event) {
     event.preventDefault();
-    axios
-      .post("http://localhost:8080/apiLogin", { login, password })
-      .then((response) => {
-        console.log(response);
-        localStorage.setItem("isLogged", !!response.data);
-        nav("/");
-      })
-      .catch((error) => console.log(error));
+    if (login !== "" && password !== "") {
+      axios
+        .post("http://localhost:8080/apiLogin", { login, password })
+        .then((response) => {
+          console.log(response);
+          localStorage.setItem("isLogged", !!response.data);
+          nav("/");
+        })
+        .catch((error) =>
+          toast.error("Błędne dane! ", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          })
+        );
+    } else {
+      toast.error("Uzupełnij wszystkie pola! ", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   }
 
   const nav = useNavigate();
@@ -45,6 +70,18 @@ function Signin() {
       <button type="submit" onClick={postLogin}>
         Zaloguj się
       </button>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </form>
   );
 }

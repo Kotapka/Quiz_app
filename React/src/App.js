@@ -9,6 +9,7 @@ import Quiz from "./pages/quiz";
 import Add from "./pages/add";
 import Code from "./pages/code";
 import { ToastContainer } from "react-bootstrap";
+import EndGame from "./pages/endGame";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/endGame/:points" element={<EndGame />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/add" element={<Add />} />
           <Route path="/signin" element={<Signin />} />
