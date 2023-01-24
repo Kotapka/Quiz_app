@@ -1,6 +1,5 @@
-package com.example.Quiz_app.dataBase;
+package com.example.Quiz_app.questions;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,12 +23,11 @@ public class Questions {
             strategy = GenerationType.SEQUENCE,
             generator = "users_id_sequence"
     )
+    @Column(name = "id")
     private Integer id;
     private String question;
     private String r_a;
     private String w_a1;
     private String w_a2;
     private String w_a3;
-    @ManyToOne
-    private Quiz quiz;
 }

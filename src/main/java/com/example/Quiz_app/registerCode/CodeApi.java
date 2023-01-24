@@ -1,17 +1,15 @@
-package com.example.Quiz_app.api;
+package com.example.Quiz_app.registerCode;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
-public class LoginApi {
-    @PostMapping("/apiLogin")
-    public ResponseEntity<LoginRequest> greet(@RequestBody LoginRequest loginRequest) {
+public class CodeApi {
+    @PostMapping("/apiCode")
+    public ResponseEntity<Code> greet(@RequestBody Code code) {
 
-        return ResponseEntity.ok(loginRequest);
+        return ResponseEntity.ok(code); //return ResponseEntity.badRequest(loginRequest);
     }
 }
