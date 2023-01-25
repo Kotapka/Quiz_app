@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Objects;
+
+/**
+ * Class storing information about user.
+ */
+
 @Entity
 @Getter
 @Setter
@@ -23,11 +28,25 @@ public class Users{
             strategy = GenerationType.SEQUENCE,
             generator = "users_id_sequence"
     )
+
+    /**
+     * Variables:
+     *  - id - stores unique identification number of a user,
+     *  - login - user's login,
+     *  - email - user's email,
+     *  - password - user's password.
+     */
+
     private Integer id;
     private String login;
     private String email;
     private String password;
 
+    /**
+     * Method checks if two User class objects are the same.
+     * @param o - object being checked.
+     * @return true if object are the same and false if they are not.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -36,11 +55,19 @@ public class Users{
         return Objects.equals(id, users.id) && Objects.equals(login, users.login) && Objects.equals(email, users.email) && Objects.equals(password, users.password);
     }
 
+    /**
+     * Function hashes input data
+     * @return set of hashed values.
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id, login, email, password);
     }
 
+    /**
+     * Method returns class variables as a string.
+     * @return string containing class variables.
+     */
     @Override
     public String toString() {
         return "User{" +

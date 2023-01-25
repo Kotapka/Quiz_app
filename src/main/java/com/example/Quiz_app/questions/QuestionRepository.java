@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 
+/**
+ * Class containing repository.
+ */
 @Repository
 public interface QuestionRepository extends JpaRepository<Questions,Integer> {
 }

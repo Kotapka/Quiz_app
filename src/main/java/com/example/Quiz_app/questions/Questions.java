@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Class storing information about question.
+ */
 @Entity
 @Getter
 @Setter
@@ -24,6 +27,14 @@ public class Questions {
             generator = "users_id_sequence"
     )
     @Column(name = "id")
+
+    /**
+     * Variables:
+     *  - id - stores unique identification number of a question,
+     *  - question - text of the question being asked to the player,
+     *  - r_a - correct answer,
+     *  - w_a1, w_a2, w_a3 - wrong answers.
+     */
     private Integer id;
     private String question;
     private String r_a;
