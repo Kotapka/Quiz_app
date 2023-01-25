@@ -10,7 +10,7 @@ function Signin() {
     event.preventDefault();
     if (login !== "" && password !== "") {
       axios
-        .post("http://localhost:8080/apiLogin", { login, password })
+        .post("http://localhost:8080/api/Login", { login, password })
         .then((response) => {
           console.log(response);
           localStorage.setItem("isLogged", !!response.data);

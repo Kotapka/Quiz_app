@@ -10,11 +10,25 @@ function Register() {
   function postRegister(event) {
     event.preventDefault();
     if (login !== "" && email !== "" && password !== "") {
+      toast.error("Prosze chwile poczekać! ", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       axios
-        .post("http://localhost:8080/apiRegister", { login, email, password })
+        .post("http://localhost:8080/api/Register", {
+          login,
+          email,
+          password,
+        })
         .then((response) => {
           console.log(response);
-          nav("/code");
+          nav("/");
         })
         .catch((error) =>
           toast.error("Błędne dane! ", {
@@ -78,7 +92,7 @@ function Register() {
         />
       </div>
       <button type="submit" onClick={postRegister}>
-        Wyślij kod
+        Zarejstruj
       </button>
       <ToastContainer
         position="bottom-right"

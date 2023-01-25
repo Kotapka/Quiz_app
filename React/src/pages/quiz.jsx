@@ -36,18 +36,18 @@ function Quiz() {
 
   function nextQuestion(answer) {
     if (answer === questions[questionNumber].r_a) {
-      setPoints((points) => (points += 1));
+      setPoints(() => points + 1);
     }
     if (questions.length - 1 === questionNumber) {
       console.log(points);
-      nav(`quiz/endGame/${points}`);
+      nav(`/endGame/${points}`);
     } else {
-      setQuestionNumber((num) => (num += 1));
+      setQuestionNumber(() => questionNumber + 1);
       const sh = [
-        questions[questionNumber].r_a,
-        questions[questionNumber].w_a1,
-        questions[questionNumber].w_a2,
-        questions[questionNumber].w_a3,
+        questions[questionNumber + 1].r_a,
+        questions[questionNumber + 1].w_a1,
+        questions[questionNumber + 1].w_a2,
+        questions[questionNumber + 1].w_a3,
       ];
       setAnswers(shuffle(sh));
     }

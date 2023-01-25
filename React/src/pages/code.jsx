@@ -13,7 +13,7 @@ function Code() {
     event.preventDefault();
     if (code !== "") {
       axios
-        .post("http://localhost:8080/apiCode", { code })
+        .post("http://localhost:8080/api/Code", { code })
         .then((response) => {
           console.log("działa");
           console.log(response);
