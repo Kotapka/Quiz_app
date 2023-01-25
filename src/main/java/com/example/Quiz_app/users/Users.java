@@ -28,6 +28,12 @@ public class Users{
     private String email;
     private String password;
 
+    public Users(String login, String email, String password,String code) {
+        this.login = login;
+        this.email = email;
+        this.password = password;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
